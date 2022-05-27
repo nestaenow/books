@@ -6,6 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import SplashScreen from './components/SplashScreen';
 import ConfirmEmailScreen from './screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
+import NewPasswordScreen from './screens/NewPasswordScreen';
 
 export default function App() {
 
@@ -18,7 +19,8 @@ export default function App() {
         {/* <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} /> */}
         {/* <Stack.Screen options={{ headerShown: false }} name="SignUp" component={SignUpScreen} /> */}
         {/* <Stack.Screen options={{ headerShown: false }} name="ConfirmEmail" component={ConfirmEmailScreen} /> */}
-        <Stack.Screen options={{ headerShown: false }} name="ForgotPassword" component={ForgotPasswordScreen} />
+        {/* <Stack.Screen options={{ headerShown: false }} name="ForgotPassword" component={ForgotPasswordScreen} /> */}
+        <Stack.Screen options={{ headerShown: false }} name="NewPassword" component={NewPasswordScreen} />
         <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>

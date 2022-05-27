@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, ScrollView, Text, View, Keyboard } from 'react-native'
-import { auth } from '../firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
@@ -9,26 +7,8 @@ import CustomButton from '../components/CustomButton';
 const ConfirmEmailScreen = () => {
     const [code, setCode] = useState('')
 
-    const navigation = useNavigation()
-
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {
-                navigation.replace('Home')
-            }
-        })
-
-        return unsubscribe
-    }, [])
-
     const handleConfirm = () => {
-        Keyboard.dismiss();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(userCredentials => {
-                const user = userCredentials.user;
-                console.log('Logged in with', user.email);
-            })
-            .catch(error => alert(error.message))
+        console.warn('Confirm')
     }
 
     const handleResend = () => {
@@ -43,6 +23,7 @@ const ConfirmEmailScreen = () => {
     <ScrollView showsHorizontalScrollIndicator={false}>
         <View style={styles.container}>
             <Text style={styles.title}>Confirm Email</Text>
+
             <View style={styles.inputContainer}>
                 <CustomInput placeholder='Enter Confirmation Code' value={code} setValue={setCode}/>
             </View>

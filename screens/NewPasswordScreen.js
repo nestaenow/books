@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, ScrollView, Text, View, Keyboard } from 'react-native'
+import { StyleSheet, ScrollView, Text, View} from 'react-native'
 import { auth } from '../firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 
-const ForgotPasswordScreen = () => {
-    const [username, setUsername] = useState('')
+const NewPasswordScreen = () => {
+    const [code, setCode] = useState('')
+    const [newPassword, setNewPassword] = useState('')
 
     const navigation = useNavigation()
 
@@ -21,18 +21,8 @@ const ForgotPasswordScreen = () => {
         return unsubscribe
     }, [])
 
-    const handleConfirm = () => {
-        Keyboard.dismiss();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(userCredentials => {
-                const user = userCredentials.user;
-                console.log('Logged in with', user.email);
-            })
-            .catch(error => alert(error.message))
-    }
-
-    const handleResend = () => {
-        console.warn('Resend')
+    const handleSubmit = () => {
+        console.warn('Submit Pressed')
     }
 
     const handleBackToLogin = () => {
@@ -44,12 +34,12 @@ const ForgotPasswordScreen = () => {
         <View style={styles.container}>
             <Text style={styles.title}>Reset Password</Text>
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Username' value={username} setValue={setUsername}/>
+                <CustomInput placeholder='Code' value={code} setValue={setCode}/>
+                <CustomInput placeholder='Enter New Password' value={newPassword} setValue={setNewPassword}/>
             </View>
         
             <View style={styles.buttonContainer}>
-                <CustomButton onPress={handleConfirm} text=' Confirm'/>
-                <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
+                <CustomButton onPress={handleSubmit} text='Submit'/>
             </View>
 
             <View style={styles.Revert}>
@@ -60,7 +50,7 @@ const ForgotPasswordScreen = () => {
   )
 }
 
-export default ForgotPasswordScreen
+export default NewPasswordScreen
 
 const styles = StyleSheet.create({
     container: {

@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, ScrollView, Text, View, Keyboard } from 'react-native'
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, ScrollView, Text, View, Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 
 const ConfirmEmailScreen = () => {
     const [code, setCode] = useState('')
+
+    const navigation = useNavigation();
 
     const handleConfirm = () => {
         console.warn('Confirm')
@@ -16,7 +18,7 @@ const ConfirmEmailScreen = () => {
     }
 
     const handleBackToLogin = () => {
-        console.warn('Back to login')
+        navigation.replace('Login')
     }
 
   return (

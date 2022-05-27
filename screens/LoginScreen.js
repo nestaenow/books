@@ -15,15 +15,15 @@ const LoginScreen = () => {
 
     const navigation = useNavigation()
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {
-                navigation.replace('Home')
-            }
-        })
+    // useEffect(() => {
+    //     const unsubscribe = auth.onAuthStateChanged(user => {
+    //         if (user) {
+    //             navigation.replace('Home')
+    //         }
+    //     })
 
-        return unsubscribe
-    }, [])
+    //     return unsubscribe
+    // }, [])
 
     // const handleSignUp = () => {
     //     Keyboard.dismiss();
@@ -35,17 +35,21 @@ const LoginScreen = () => {
     //         .catch(error => alert(error.message))
     // }
     const handleLogin = () => {
-        Keyboard.dismiss();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(userCredentials => {
-                const user = userCredentials.user;
-                console.log('Logged in with', user.email);
-            })
-            .catch(error => alert(error.message))
+        // Keyboard.dismiss();
+        // signInWithEmailAndPassword(auth, email, password)
+        //     .then(userCredentials => {
+        //         const user = userCredentials.user;
+        //         console.log('Logged in with', user.email);
+        //     })
+        //     .catch(error => alert(error.message))
+
+        //Validate User
+
+        navigation.replace('Home')
     }
 
     const handleForgotPassword = () => {
-        console.warn('Forgot Password Pressed')
+        navigation.replace('ForgotPassword')
     }
 
     const handleLoginWithFacebook = () => {
@@ -61,7 +65,7 @@ const LoginScreen = () => {
     }
 
     const handleSignUp = () => {
-        console.warn('SignUp')
+        navigation.replace('SignUp')
     }
 
   return (

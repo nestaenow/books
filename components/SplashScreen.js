@@ -7,8 +7,7 @@ const SplashScreen = () => {
   const navigation = useNavigation()
 
   setTimeout(() => {
-    navigation.replace('NewPassword')
-    // navigation.replace('Login')
+    navigation.replace('Login')
   }, 3000);
 
   return (

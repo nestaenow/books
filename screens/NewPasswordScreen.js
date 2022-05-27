@@ -11,22 +11,22 @@ const NewPasswordScreen = () => {
 
     const navigation = useNavigation()
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {
-                navigation.replace('Home')
-            }
-        })
+    // useEffect(() => {
+    //     const unsubscribe = auth.onAuthStateChanged(user => {
+    //         if (user) {
+    //             navigation.replace('Home')
+    //         }
+    //     })
 
-        return unsubscribe
-    }, [])
+    //     return unsubscribe
+    // }, [])
 
     const handleSubmit = () => {
-        console.warn('Submit Pressed')
+        navigation.replace('Home')
     }
 
     const handleBackToLogin = () => {
-        console.warn('Back to login')
+        navigation.replace('Login')
     }
 
   return (

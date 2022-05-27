@@ -7,8 +7,10 @@ import CustomButton from '../components/CustomButton';
 const ForgotPasswordScreen = () => {
     const [username, setUsername] = useState('')
 
+    const navigation = useNavigation()
+
     const handleConfirm = () => {
-        console.warn('confirm')
+        navigation.replace('NewPassword')
     }
 
     const handleResend = () => {
@@ -16,7 +18,7 @@ const ForgotPasswordScreen = () => {
     }
 
     const handleBackToLogin = () => {
-        console.warn('Back to login')
+        navigation.replace('Login')
     }
 
   return (

@@ -15,24 +15,28 @@ const SignUpScreen = () => {
 
     const navigation = useNavigation()
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {
-                navigation.replace('Home')
-            }
-        })
+    // useEffect(() => {
+    //     const unsubscribe = auth.onAuthStateChanged(user => {
+    //         if (user) {
+    //             navigation.replace('Home')
+    //         }
+    //     })
 
-        return unsubscribe
-    }, [])
+    //     return unsubscribe
+    // }, [])
 
     const handleSignUp = () => {
-        Keyboard.dismiss();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(userCredentials => {
-                const user = userCredentials.user;
-                console.log('Logged in with', user.email);
-            })
-            .catch(error => alert(error.message))
+        // Keyboard.dismiss();
+        // signInWithEmailAndPassword(auth, email, password)
+        //     .then(userCredentials => {
+        //         const user = userCredentials.user;
+        //         console.log('Logged in with', user.email);
+        //     })
+        //     .catch(error => alert(error.message))
+
+        //Register User
+
+        navigation.replace('ConfirmEmail')
     }
 
     const handleTermsOfUse = () => {
@@ -44,7 +48,7 @@ const SignUpScreen = () => {
     }
 
     const handleLogin = () => {
-        console.warn('Login')
+        navigation.replace('Login')
     }
 
   return (

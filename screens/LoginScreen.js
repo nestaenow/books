@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
-import Logo from '../assets/logoWtext.png'
+import Logo from '../assets/logoWtext.png';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('')

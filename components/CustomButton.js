@@ -10,6 +10,7 @@ const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, fgColor }) => {
             styles[`button_${type}`],
             bgColor ? {backgroundColor: bgColor} : {},
         ]}>
+        
         <Text style={[
             styles.buttonText, 
             styles[`buttonText_${type}`],

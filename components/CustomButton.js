@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, fgColor }) => {
@@ -10,7 +10,10 @@ const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, fgColor }) => {
             styles[`button_${type}`],
             bgColor ? {backgroundColor: bgColor} : {},
         ]}>
-        
+        <Image 
+            source={require('../assets/menu.png')}
+            style={styles.apple} 
+        />
         <Text style={[
             styles.buttonText, 
             styles[`buttonText_${type}`],
@@ -55,5 +58,9 @@ const styles = StyleSheet.create({
         color: '#6B3F87',
         fontWeight: '500',
         fontSize: 14,
+    },
+    apple: {
+        height: 10,
+        width: 10,
     }
 })

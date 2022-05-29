@@ -2,6 +2,7 @@ import { StyleSheet, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, logo, fgColor }) => {
+
   return (
     <TouchableOpacity 
         onPress={onPress} 
@@ -11,11 +12,7 @@ const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, logo, fgColor })
             bgColor ? {backgroundColor: bgColor} : {},
             styles.container
         ]}>
-        <Image 
-            source={logo ? logo : {}}
-            style={styles.logoIcon} 
-        />
-
+            
         <Text style={[
             styles.buttonText, 
             styles[`buttonText_${type}`],
@@ -31,7 +28,6 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'center',
     },
     button: {
@@ -67,9 +63,4 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 14,
     },
-    logoIcon: {
-        height: 18,
-        width: 18,
-        marginLeft: 2
-    }
 })

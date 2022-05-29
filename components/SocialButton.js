@@ -1,7 +1,7 @@
 import { StyleSheet, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const CustomButton = ({ onPress, text, type="PRIMARY", bgColor,logo, fgColor }) => {
+const SocialButton = ({ onPress, text, type="PRIMARY", bgColor,logo, fgColor }) => {
     const path = logo
   return (
     <TouchableOpacity 
@@ -22,7 +22,7 @@ const CustomButton = ({ onPress, text, type="PRIMARY", bgColor,logo, fgColor }) 
   )
 }
 
-export default CustomButton
+export default SocialButton
 
 const styles = StyleSheet.create({
     container: {

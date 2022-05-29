@@ -46,7 +46,7 @@ const LoginScreen = () => {
                 style={[styles.logo, {height : height * 0.0953}]}
             />
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Email' value={email} setValue={setEmail}/>
+                <CustomInput placeholder='Email' value={email} setValue={setEmail} logo={require('../assets/Facebook.png')}/>
                 <CustomInput placeholder='Password' value={password} setValue={setPassword} secureTextEntry/>
             </View>
         
@@ -85,7 +85,8 @@ const styles = StyleSheet.create({
         width: '80%',
     },
     buttonContainer: {
-        width: '60%',
+        display: 'flex',
+        width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 40

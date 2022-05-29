@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import SocialSignInButtons from '../components/SocialSignInButtons';
+import BackButton from '../components/BackButton';
 
 const SignUpScreen = () => {
     const [username, setUsername] = useState('')
@@ -51,9 +52,14 @@ const SignUpScreen = () => {
         navigation.replace('Login')
     }
 
+    const handleBack = () => {
+        navigation.replace('Login')
+    }
+
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
         <View style={styles.container}>
+            <BackButton onPress={handleBack}/>
             <Text style={styles.title}>Create an account</Text>
             <View style={styles.inputContainer}>
                 <CustomInput placeholder='Username' value={username} setValue={setUsername}/>

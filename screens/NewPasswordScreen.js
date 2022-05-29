@@ -4,6 +4,7 @@ import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import BackButton from '../components/BackButton';
 
 const NewPasswordScreen = () => {
     const [code, setCode] = useState('')
@@ -25,21 +26,31 @@ const NewPasswordScreen = () => {
         navigation.replace('Home')
     }
 
+    const handleResend = () => {
+        console.warn('Resend')
+    }
+
     const handleBackToLogin = () => {
         navigation.replace('Login')
+    }
+    
+    const handleBack = () => {
+        navigation.replace('ForgotPassword')
     }
 
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
         <View style={styles.container}>
+            <BackButton onPress={handleBack}/>
             <Text style={styles.title}>Reset Password</Text>
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Code' value={code} setValue={setCode}/>
+                <CustomInput placeholder='Enter Code' value={code} setValue={setCode}/>
                 <CustomInput placeholder='Enter New Password' value={newPassword} setValue={setNewPassword}/>
             </View>
         
             <View style={styles.buttonContainer}>
                 <CustomButton onPress={handleSubmit} text='Submit'/>
+                <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
             </View>
 
             <View style={styles.Revert}>

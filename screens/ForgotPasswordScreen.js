@@ -14,29 +14,22 @@ const ForgotPasswordScreen = () => {
         navigation.replace('NewPassword')
     }
 
-    const handleResend = () => {
-        console.warn('Resend')
-    }
-
     const handleBackToLogin = () => {
         navigation.replace('Login')
     }
-    const handleBack2Login = () => {
-        console.warn('Login')
-    }
+    
 
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
-        <BackButton onPress={handleBackToLogin}/>
         <View style={styles.container}>
-            <Text style={styles.title}>Reset Password</Text>
+            <BackButton onPress={handleBackToLogin}/>
+            <Text style={styles.title}>Confirm Username</Text>
             <View style={styles.inputContainer}>
                 <CustomInput placeholder='Username' value={username} setValue={setUsername}/>
             </View>
         
             <View style={styles.buttonContainer}>
                 <CustomButton onPress={handleConfirm} text='Confirm'/>
-                <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
             </View>
 
             <View style={styles.Revert}>

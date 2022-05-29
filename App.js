@@ -8,6 +8,7 @@ import ConfirmEmailScreen from './screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 import NewPasswordScreen from './screens/NewPasswordScreen';
 
+
 export default function App() {
 
   const Stack = createNativeStackNavigator();

@@ -25,7 +25,7 @@ const ForgotPasswordScreen = () => {
             <BackButton onPress={handleBackToLogin}/>
             <Text style={styles.title}>Confirm Username</Text>
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Username' value={username} setValue={setUsername}/>
+                <CustomInput placeholder='Username' value={username} setValue={setUsername} logo={require('../assets/user.png')}/>
             </View>
         
             <View style={styles.buttonContainer}>

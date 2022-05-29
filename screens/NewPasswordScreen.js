@@ -44,8 +44,8 @@ const NewPasswordScreen = () => {
             <BackButton onPress={handleBack}/>
             <Text style={styles.title}>Reset Password</Text>
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Enter Code' value={code} setValue={setCode}/>
-                <CustomInput placeholder='Enter New Password' value={newPassword} setValue={setNewPassword}/>
+                <CustomInput placeholder='Enter Code' value={code} setValue={setCode} logo={require('../assets/barcode.png')}/>
+                <CustomInput placeholder='Enter New Password' value={newPassword} setValue={setNewPassword} logo={require('../assets/lock.png')}/>
             </View>
         
             <View style={styles.buttonContainer}>

@@ -3,6 +3,7 @@ import { StyleSheet, ScrollView, Text, View, Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import BackButton from '../components/BackButton';
 
 const ConfirmEmailScreen = () => {
     const [code, setCode] = useState('')
@@ -21,6 +22,10 @@ const ConfirmEmailScreen = () => {
         navigation.replace('Login')
     }
 
+    const handleBack = () => {
+        navigation.replace('SignUp')
+    }
+
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
         <View style={styles.container}>
@@ -28,7 +33,7 @@ const ConfirmEmailScreen = () => {
             <Text style={styles.title}>Confirm Email</Text>
 
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Enter Confirmation Code' value={code} setValue={setCode}/>
+                <CustomInput placeholder='Enter Confirmation Code' value={code} setValue={setCode} logo={require('../assets/barcode.png')}/>
             </View>
         
             <View style={styles.buttonContainer}>

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, logo, fgColor }) => {
+const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, fgColor }) => {
 
   return (
     <TouchableOpacity 
@@ -12,7 +12,6 @@ const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, logo, fgColor })
             bgColor ? {backgroundColor: bgColor} : {},
             styles.container
         ]}>
-            
         <Text style={[
             styles.buttonText, 
             styles[`buttonText_${type}`],

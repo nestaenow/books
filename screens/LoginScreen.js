@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, ScrollView, Image, View, useWindowDimensions, Keyboard } from 'react-native'
-import { auth } from '../firebase'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
@@ -15,36 +13,7 @@ const LoginScreen = () => {
 
     const navigation = useNavigation()
 
-    // useEffect(() => {
-    //     const unsubscribe = auth.onAuthStateChanged(user => {
-    //         if (user) {
-    //             navigation.replace('Home')
-    //         }
-    //     })
-
-    //     return unsubscribe
-    // }, [])
-
-    // const handleSignUp = () => {
-    //     Keyboard.dismiss();
-    //     createUserWithEmailAndPassword(auth, email, password)
-    //         .then(userCredentials => {
-    //             const user = userCredentials.user;
-    //             console.log('Registered with', user.email);
-    //         })
-    //         .catch(error => alert(error.message))
-    // }
     const handleLogin = () => {
-        // Keyboard.dismiss();
-        // signInWithEmailAndPassword(auth, email, password)
-        //     .then(userCredentials => {
-        //         const user = userCredentials.user;
-        //         console.log('Logged in with', user.email);
-        //     })
-        //     .catch(error => alert(error.message))
-
-        //Validate User
-
         navigation.replace('Home')
     }
 
@@ -83,12 +52,6 @@ const LoginScreen = () => {
             <View style={styles.buttonContainer}>
                 <CustomButton onPress={handleLogin} text='Login'/>
                 <CustomButton onPress={handleForgotPassword} text='Forgot Password' type='TERTIARY'/>
-                {/* <TouchableOpacity
-                    onPress={handleSignUp}
-                    style={[styles.button, styles.buttonOutline]}
-                >
-                    <Text style={styles.buttonOutlineText}>Register</Text>
-                </TouchableOpacity> */}
             </View>
 
             <View style={styles.SocialLogin}>

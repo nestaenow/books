@@ -46,8 +46,8 @@ const LoginScreen = () => {
                 style={[styles.logo, {height : height * 0.0953}]}
             />
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Email' value={email} setValue={setEmail} logo={require('../assets/Facebook.png')}/>
-                <CustomInput placeholder='Password' value={password} setValue={setPassword} secureTextEntry/>
+                <CustomInput placeholder='Email' value={email} setValue={setEmail} logo={require('../assets/user.png')}/>
+                <CustomInput placeholder='Password' value={password} setValue={setPassword} secureTextEntry logo={require('../assets/lock.png')}/>
             </View>
         
             <View style={styles.buttonContainer}>
@@ -95,6 +95,6 @@ const styles = StyleSheet.create({
         width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 100
+        marginTop: 75
     }
 })

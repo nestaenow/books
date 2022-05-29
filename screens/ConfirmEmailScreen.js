@@ -24,6 +24,7 @@ const ConfirmEmailScreen = () => {
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
         <View style={styles.container}>
+            <BackButton onPress={handleBack}/>
             <Text style={styles.title}>Confirm Email</Text>
 
             <View style={styles.inputContainer}>

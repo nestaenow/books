@@ -26,14 +26,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     flex: 1,
     flexDirection: 'row',
-    borderColor: '#C4C4C4',
+    borderColor: '#6B3F87',
     borderWidth: 1,
     borderRadius: 5,
     marginTop: 8,
   },
   imageContainer:{
     padding: 15,
-    borderColor: '#c4c4c4',
+    borderColor: '#6B3F87',
     borderRightWidth: 1
   },
   input: {

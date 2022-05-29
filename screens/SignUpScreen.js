@@ -52,10 +52,10 @@ const SignUpScreen = () => {
             <BackButton onPress={handleBack}/>
             <Text style={styles.title}>Create an account</Text>
             <View style={styles.inputContainer}>
-                <CustomInput placeholder='Username' value={username} setValue={setUsername}/>
-                <CustomInput placeholder='Email' value={email} setValue={setEmail}/>
-                <CustomInput placeholder='Password' value={password} setValue={setPassword} secureTextEntry/>
-                <CustomInput placeholder='Confirm Password' value={passwordConfirm} setValue={setPasswordConfirm} secureTextEntry/>
+                <CustomInput placeholder='Username' value={username} setValue={setUsername} logo={require('../assets/user.png')}/>
+                <CustomInput placeholder='Email' value={email} setValue={setEmail} logo={require('../assets/envelope.png')}/>
+                <CustomInput placeholder='Password' value={password} setValue={setPassword} secureTextEntry logo={require('../assets/lock.png')}/>
+                <CustomInput placeholder='Confirm Password' value={passwordConfirm} setValue={setPasswordConfirm} secureTextEntry logo={require('../assets/lock.png')}/>
             </View>
         
             <View style={styles.buttonContainer}>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         color: '#6B3F87',
-        marginTop: 120,
+        marginTop: 100,
         marginBottom: 20,
     },
     inputContainer: {
@@ -110,6 +110,6 @@ const styles = StyleSheet.create({
         width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 100
+        marginTop: 75
     },
 })

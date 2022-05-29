@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, ScrollView, Text, View, Keyboard } from 'react-native'
+import { StyleSheet, ScrollView, Text, View, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import BackButton from '../components/BackButton';
 
 const ForgotPasswordScreen = () => {
     const [username, setUsername] = useState('')
@@ -20,9 +21,13 @@ const ForgotPasswordScreen = () => {
     const handleBackToLogin = () => {
         navigation.replace('Login')
     }
+    const handleBack2Login = () => {
+        console.warn('Login')
+    }
 
   return (
     <ScrollView showsHorizontalScrollIndicator={false}>
+        <BackButton onPress={handleBackToLogin}/>
         <View style={styles.container}>
             <Text style={styles.title}>Reset Password</Text>
             <View style={styles.inputContainer}>

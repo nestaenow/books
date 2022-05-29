@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/core'
 
-const HomeScreen = () => {
+const LandScreen = () => {
 
   const navigation = useNavigation()
 
@@ -12,15 +12,17 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Email:</Text>
       <TouchableOpacity onPress={handleSignOut} style={styles.button}>
-        <Text style={styles.buttonText}>Sign Out</Text>
+        <Text style={styles.buttonText}>Looking for a Book?</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
+        <Text style={styles.buttonText}>Want to sell a Book?</Text>
       </TouchableOpacity>
     </View>
   )
 }
 
-export default HomeScreen
+export default LandScreen
 
 const styles = StyleSheet.create({
   container: {

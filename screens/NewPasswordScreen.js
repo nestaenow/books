@@ -23,7 +23,7 @@ const NewPasswordScreen = () => {
     // }, [])
 
     const handleSubmit = () => {
-        navigation.replace('Home')
+        navigation.replace('Login')
     }
 
     const handleResend = () => {

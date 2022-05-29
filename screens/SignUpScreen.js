@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, ScrollView, Text, View, useWindowDimensions, Keyboard } from 'react-native'
-import { auth } from '../firebase'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useState } from 'react'
+import { StyleSheet, ScrollView, Text, View, } from 'react-native'
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
-import SocialSignInButtons from '../components/SocialSignInButtons';
+import SocialButton from '../components/SocialButton';
 import BackButton from '../components/BackButton';
 
 const SignUpScreen = () => {
@@ -16,27 +14,7 @@ const SignUpScreen = () => {
 
     const navigation = useNavigation()
 
-    // useEffect(() => {
-    //     const unsubscribe = auth.onAuthStateChanged(user => {
-    //         if (user) {
-    //             navigation.replace('Home')
-    //         }
-    //     })
-
-    //     return unsubscribe
-    // }, [])
-
     const handleSignUp = () => {
-        // Keyboard.dismiss();
-        // signInWithEmailAndPassword(auth, email, password)
-        //     .then(userCredentials => {
-        //         const user = userCredentials.user;
-        //         console.log('Logged in with', user.email);
-        //     })
-        //     .catch(error => alert(error.message))
-
-        //Register User
-
         navigation.replace('ConfirmEmail')
     }
 
@@ -54,6 +32,18 @@ const SignUpScreen = () => {
 
     const handleBack = () => {
         navigation.replace('Login')
+    }
+
+    const handleSignUpWithFacebook = () => {
+        console.warn('Facebook')
+    }
+
+    const handleSignUpWithGoogle = () => {
+        console.warn('Google')
+    }
+    
+    const handleSignUpWithApple = () => {
+        console.warn('Apple')
     }
 
   return (
@@ -74,7 +64,9 @@ const SignUpScreen = () => {
             </View>
 
             <View style={styles.SocialSignUp}>
-                <SocialSignInButtons/>
+                <SocialButton onPress={handleSignUpWithFacebook} text='SignUp with Facebook' bgColor='#E7EAF4' fgColor='#4765A9' logo={require('../assets/Facebook.png')}/>
+                <SocialButton onPress={handleSignUpWithGoogle} text='SignUp with Google' bgColor='#FAE9EA' fgColor='#DD4D44' logo={require('../assets/Google.png')}/>
+                <SocialButton onPress={handleSignUpWithApple} text='SignUp with Apple' bgColor='#E3E3E3' fgColor='#363636' logo={require('../assets/Apple.png')}/>
                 <CustomButton onPress={handleLogin} text="Have an account? Login" type='TERTIARY'/>
             </View>
         </View>

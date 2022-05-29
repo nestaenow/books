@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import Logo from '../assets/logoWtext.png';
+import SocialButton from '../components/SocialButton';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
@@ -55,9 +56,9 @@ const LoginScreen = () => {
             </View>
 
             <View style={styles.SocialLogin}>
-                <CustomButton onPress={handleLoginWithFacebook} text='Login with Facebook' bgColor='#E7EAF4' fgColor='#4765A9'/>
-                <CustomButton onPress={handleLoginWithGoogle} text='Login with Google' bgColor='#FAE9EA' fgColor='#DD4D44'/>
-                <CustomButton onPress={handleLoginWithApple} text='Login with Apple' bgColor='#E3E3E3' fgColor='#363636'/>
+                <SocialButton onPress={handleLoginWithFacebook} text='Login with Facebook' bgColor='#E7EAF4' fgColor='#4765A9' logo={require('../assets/Facebook.png')}/>
+                <SocialButton onPress={handleLoginWithGoogle} text='Login with Google' bgColor='#FAE9EA' fgColor='#DD4D44' logo={require('../assets/Google.png')}/>
+                <SocialButton onPress={handleLoginWithApple} text='Login with Apple' bgColor='#E3E3E3' fgColor='#363636' logo={require('../assets/Apple.png')}/>
                 <CustomButton onPress={handleSignUp} text="Don't have an account? Create One" type='TERTIARY'/>
             </View>
         </View>

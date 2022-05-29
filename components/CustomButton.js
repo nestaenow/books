@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, fgColor }) => {
+const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, logo, fgColor }) => {
   return (
     <TouchableOpacity 
         onPress={onPress} 
@@ -9,11 +9,13 @@ const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, fgColor }) => {
             styles.button, 
             styles[`button_${type}`],
             bgColor ? {backgroundColor: bgColor} : {},
+            styles.container
         ]}>
         <Image 
-            source={require('../assets/menu.png')}
-            style={styles.apple} 
+            source={logo ? logo : {}}
+            style={styles.logoIcon} 
         />
+
         <Text style={[
             styles.buttonText, 
             styles[`buttonText_${type}`],
@@ -26,6 +28,12 @@ const CustomButton = ({ onPress, text, type="PRIMARY", bgColor, fgColor }) => {
 export default CustomButton
 
 const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     button: {
         width: '100%',
         padding: 15,
@@ -59,8 +67,9 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 14,
     },
-    apple: {
-        height: 10,
-        width: 10,
+    logoIcon: {
+        height: 18,
+        width: 18,
+        marginLeft: 2
     }
 })

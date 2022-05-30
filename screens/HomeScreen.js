@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/core'
 
@@ -6,17 +6,15 @@ const HomeScreen = () => {
 
   const navigation = useNavigation()
 
-  const handleSignOut = () => {
-    navigation.replace('Login')
-  }
-
   return (
-    <View style={styles.container}>
-      <Text>Email:</Text>
-      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
-        <Text style={styles.buttonText}>Sign Out</Text>
-      </TouchableOpacity>
-    </View>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
+      <ScrollView>
+        <View style={{flexDirection: 'row'}}>
+          <Text>Hello Alessandro Nesta</Text>
+          <ImageBackground source={require('../assets/user1.png')} style={{width: 35, height: 35}}/>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 

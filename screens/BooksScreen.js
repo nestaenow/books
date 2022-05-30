@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/core'
 
-const SearchBookScreen = () => {
+const BooksScreen = () => {
 
   const navigation = useNavigation()
 
@@ -12,7 +12,7 @@ const SearchBookScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Search Book Screen</Text>
+      <Text>Book Screen</Text>
       <TouchableOpacity onPress={handleSignOut} style={styles.button}>
         <Text style={styles.buttonText}>Sign Out</Text>
       </TouchableOpacity>
@@ -20,7 +20,7 @@ const SearchBookScreen = () => {
   )
 }
 
-export default SearchBookScreen
+export default BooksScreen
 
 const styles = StyleSheet.create({
   container: {

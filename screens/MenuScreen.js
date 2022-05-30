@@ -12,7 +12,7 @@ const MenuScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Email:</Text>
+      <Text>Menu Screen</Text>
       <TouchableOpacity onPress={handleSignOut} style={styles.button}>
         <Text style={styles.buttonText}>Sign Out</Text>
       </TouchableOpacity>

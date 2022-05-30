@@ -8,7 +8,7 @@ import ConfirmEmailScreen from './screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 import NewPasswordScreen from './screens/NewPasswordScreen';
 import LandScreen from './screens/LandScreen';
-import Tabs from './navigation/Tabs';
+import TabNavigator from './navigation/TabNavigator';
 
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} /> 
         <Stack.Screen options={{ headerShown: false }} name="Land" component={LandScreen} />
       </Stack.Navigator> */}
-      <Tabs/>
+      <TabNavigator/>
     </NavigationContainer>
   );
 }

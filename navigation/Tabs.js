@@ -11,20 +11,50 @@ const Tab = createBottomTabNavigator();
 const Tabs = () => {
   return (
     <Tab.Navigator style = {styles.tabNavigator} screenOptions={{ tabBarShowLabel: false, headerShown: false }}>
-      <Tab.Screen name='Home' component={HomeScreen} screenOptions = {{ tabBarIcon: ({ focused }) => {
+      <Tab.Screen name='Home' component={HomeScreen} options = {{ tabBarIcon: ({ focused }) => {
         const image = focused
         ? require('../assets/HomeActive.png')
         : require('../assets/HomeInactive.png')
         return (
             <Image
                 source={image}
-                style={{height:20, width:20}}
+                style={{height:24, width:24, resizeMode: 'contain'}}
             />
         )
     }}}/>
-      <Tab.Screen name='SerachBook' component={SearchBookScreen}/>
-      <Tab.Screen name='Books' component={BooksScreen}/>
-      <Tab.Screen name='Menu' component={MenuScreen}/>
+      <Tab.Screen name='SerachBook' component={SearchBookScreen} options = {{ tabBarIcon: ({ focused }) => {
+        const image = focused
+        ? require('../assets/SearchActive.png')
+        : require('../assets/SearchInactive.png')
+        return (
+            <Image
+                source={image}
+                style={{height:24, width:24, resizeMode: 'contain'}}
+            />
+        )
+    }}}/>
+      <Tab.Screen name='Books' component={BooksScreen} options = {{ tabBarBadge: 3, tabBarIcon: ({ focused }) => {
+        const image = focused
+        ? require('../assets/BooksActive.png')
+        : require('../assets/BooksInactive.png')
+        return (
+            <Image
+                source={image}
+                style={{height:24, width:24, resizeMode: 'contain'}}
+            />
+        )
+    }}}/>
+      <Tab.Screen name='Menu' component={MenuScreen} options = {{ tabBarIcon: ({ focused }) => {
+        const image = focused
+        ? require('../assets/MenuActive.png')
+        : require('../assets/MenuInactive.png')
+        return (
+            <Image
+                source={image}
+                style={{height:24, width:24, resizeMode: 'contain'}}
+            />
+        )
+    }}}/>
     </Tab.Navigator>
   )
 }

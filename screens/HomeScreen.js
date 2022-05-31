@@ -1,15 +1,22 @@
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/core'
 import Feather from 'react-native-vector-icons/Feather'
 import Carousel from 'react-native-snap-carousel';
 import { sliderData } from '../model/data';
 import BookCoverSlider from '../components/BookCoverSlider';
 import { windowWidth } from '../utils/Dimensions'
+import CustomSwitch from '../components/CustomSwitch';
 
 const HomeScreen = () => {
   const renderBookCover = ({item, index}) => {
     return <BookCoverSlider data={item}/>
+  }
+
+  const [bestSellerTab, setBestSellerTab] = useState(1)
+
+  const onSelectSwitch = (value) => {
+    setBestSellerTab(value)
   }
 
   const navigation = useNavigation()
@@ -28,7 +35,7 @@ const HomeScreen = () => {
         </View>
 
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20}}>
-          <Text style={styles.header}>Spicy New books</Text>
+          <Text style={styles.header}>New Releases</Text>
           <TouchableOpacity onPress={() => {}}>
             <Text style={{color: '#6B3F87'}}>See All</Text>
           </TouchableOpacity>
@@ -43,6 +50,15 @@ const HomeScreen = () => {
           loop={true}
         />
 
+        <CustomSwitch 
+          selectionMode={1} 
+          option1='Best Seller' 
+          option2='The Latest'
+          onSelectSwitch={onSelectSwitch}
+        />
+
+        {bestSellerTab == 1 && <Text>Best Seller</Text>}
+        {bestSellerTab == 2 && <Text>The Latest</Text>}
       </ScrollView>
     </SafeAreaView>
   )

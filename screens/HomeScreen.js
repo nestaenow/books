@@ -3,20 +3,21 @@ import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/core'
 import Feather from 'react-native-vector-icons/Feather'
 import Carousel from 'react-native-snap-carousel';
-import { sliderData } from '../model/data';
+import { bestSeller, sliderData, theLatest } from '../model/data';
 import BookCoverSlider from '../components/BookCoverSlider';
 import { windowWidth } from '../utils/Dimensions'
 import CustomSwitch from '../components/CustomSwitch';
+import ListItem from '../components/ListItem';
 
 const HomeScreen = () => {
   const renderBookCover = ({item, index}) => {
     return <BookCoverSlider data={item}/>
   }
 
-  const [bestSellerTab, setBestSellerTab] = useState(1)
+  const [booksTab, setBooksTab] = useState(1)
 
   const onSelectSwitch = (value) => {
-    setBestSellerTab(value)
+    setBooksTab(value)
   }
 
   const navigation = useNavigation()
@@ -57,8 +58,33 @@ const HomeScreen = () => {
           onSelectSwitch={onSelectSwitch}
         />
 
-        {bestSellerTab == 1 && <Text>Best Seller</Text>}
-        {bestSellerTab == 2 && <Text>The Latest</Text>}
+        {booksTab == 1 && 
+          bestSeller.map(item => (
+            <ListItem 
+              key={item.id} 
+              image={item.image} 
+              title={item.title} 
+              author={item.author} 
+              genre={item.genre}
+              pages={item.pages} 
+              price={item.price}
+            />
+          ))
+        }
+
+        {booksTab == 2 && 
+          theLatest.map(item => (
+            <ListItem 
+              key={item.id} 
+              image={item.image} 
+              title={item.title} 
+              author={item.author} 
+              genre={item.genre}
+              pages={item.pages} 
+              price={item.price}
+            />
+          ))
+        }
       </ScrollView>
     </SafeAreaView>
   )

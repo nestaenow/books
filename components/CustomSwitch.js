@@ -15,7 +15,8 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
         width: '100%',
         backgroundColor: 'white',
         flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginBottom: 20
     }}>
       <TouchableOpacity 
         activeOpacity={1} 
@@ -57,11 +58,4 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
 
 export default CustomSwitch
 
-const styles = StyleSheet.create({
-    Options: {
-        flex: 1,
-        borderRadius: 8,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
+const styles = StyleSheet.create({})

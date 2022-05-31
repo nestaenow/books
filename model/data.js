@@ -92,7 +92,7 @@ export const theLatest = [
         id: '4',
     },
     {
-        image: require('../assets/books/SonOfTheStorm.jpg'),
+        image: require('../assets/books/SonOfTheStorm.jpeg'),
         title: 'Son Of The Storm',
         genre: 'Adventure',
         price: '5000XAF',

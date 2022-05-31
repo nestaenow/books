@@ -6,7 +6,7 @@ const BookCoverSlider = ({data}) => {
     <View>
       <Image 
         source={data.image}
-        style={{height: 300, width: 150, borderRadius: 8, resizeMode: 'contain'}}
+        style={styles.bookCover}
       />
     </View>
   )
@@ -14,4 +14,11 @@ const BookCoverSlider = ({data}) => {
 
 export default BookCoverSlider
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    bookCover: {
+        height: 250,
+        width: 150,
+        borderRadius: 8,
+        resizeMode: 'contain'
+    }
+})

@@ -10,6 +10,7 @@ const ListItem = ({image, title, author, pages, genre, price, onPress}) => {
     const navigation = useNavigation()
 
     const [like, setLike] = useState('hearto')
+    // const [likeOn, setLikeOn] = useState(false)
     const onPressHandler = () => {
         setLike('heart')
     }

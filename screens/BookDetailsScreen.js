@@ -8,12 +8,8 @@ const BookDetailsScreen = () => {
     <SafeAreaView>
       <ScrollView>
         <View style={styles.cover}>
-          <ImageBackground source={require('../assets/books/FiveFeetApart.jpg')} resizeMode="cover" style={styles.image}>
-            {/* <Image source={require('../assets/books/FiveFeetApart.jpg')} style={{width: 240 , height: 360}}/> */}
-            <View style={{opacity:1}}>
-              <Text style={styles.text}>yfgjvjgvkhvkhgvogvnfgnjfn</Text>
-            </View>
-            
+          <ImageBackground source={require('../assets/books/FiveFeetApart.jpg')} resizeMode="cover" blurRadius={15} style={styles.image}>
+            <Image source={require('../assets/books/FiveFeetApart.jpg')} style={{width: 240 , height: 360}}/>
           </ImageBackground>
         </View>
         <View></View>
@@ -36,16 +32,8 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: "center",
+    alignItems: 'center',
     width: '100%',
     height: windowHeight * 0.64,
-    opacity: 0.3
   },
-  text: {
-    color: "white",
-    fontSize: 42,
-    lineHeight: 84,
-    fontWeight: "bold",
-    textAlign: "center",
-    backgroundColor: "#000000c0",
-  }
 })

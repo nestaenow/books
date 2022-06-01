@@ -9,6 +9,7 @@ const CustomInput = ({value, setValue, placeholder, logo, secureTextEntry}) => {
         <Image source={path} style={{height: 20, width: 20}}/>
       </View>
       <TextInput 
+        placeholderTextColor={'#A791B5'}
         placeholder={placeholder} 
         value={value} 
         onChangeText={text => setValue(text)}

@@ -1,13 +1,19 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import GenreTags from './GenreTags'
 import Foundation from 'react-native-vector-icons/Foundation'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native'
 import BookDetails from '../screens/BookDetailsScreen'
 
-const ListItem = ({image, title, author, pages, genre, price}) => {
+const ListItem = ({image, title, author, pages, genre, price, onPress}) => {
     const navigation = useNavigation()
+
+    const [like, setLike] = useState('hearto')
+    const onPressHandler = () => {
+        setLike('heart')
+    }
+
   return (
     <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
       <TouchableOpacity onPress={() => navigation.navigate('BookDetails')} style={{flex: 1, flexDirection: 'row'}}>
@@ -28,7 +34,9 @@ const ListItem = ({image, title, author, pages, genre, price}) => {
       </TouchableOpacity>
 
       <View style={{justifyContent: 'space-between', alignItems: 'flex-end', marginVertical: 10,}}>
-        <AntDesign name='hearto' size={20} color='#DA0202' style={{marginRight: 5}}/>
+        <TouchableOpacity onPress={onPressHandler}>
+            <AntDesign name={like} size={20} color='#DA0202' style={{marginRight: 5}}/>
+        </TouchableOpacity>
         <View>
             <Text style={{fontSize: 15, fontWeight: '700', color: '#6B3F87'}}>{price}</Text>
         </View>

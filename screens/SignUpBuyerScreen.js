@@ -15,7 +15,7 @@ const SignUpBuyerScreen = () => {
     const navigation = useNavigation()
 
     const handleSignUp = () => {
-        navigation.replace('ConfirmEmail')
+        navigation.navigate('ConfirmEmail')
     }
 
     const handleTermsOfUse = () => {
@@ -27,30 +27,18 @@ const SignUpBuyerScreen = () => {
     }
 
     const handleLogin = () => {
-        navigation.replace('Login')
-    }
-
-    const handleBack = () => {
-        navigation.replace('Login')
-    }
-
-    const handleSignUpWithFacebook = () => {
-        console.warn('Facebook')
+        navigation.navigate('Login')
     }
 
     const handleSignUpWithGoogle = () => {
         console.warn('Google')
-    }
-    
-    const handleSignUpWithApple = () => {
-        console.warn('Apple')
     }
 
   return (
     <SafeAreaView>
         <ScrollView showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
-                <BackButton onPress={handleBack} color='#6B3F87'/>
+                <BackButton onPress={() => navigation.goBack()} color='#6B3F87'/>
                 <Text style={styles.title}>Create an account</Text>
                 <View style={styles.inputContainer}>
                     <CustomInput placeholder='Username' value={username} setValue={setUsername} logo={require('../assets/user.png')}/>

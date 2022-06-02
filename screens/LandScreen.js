@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/core'
 
@@ -6,19 +6,23 @@ const LandScreen = () => {
 
   const navigation = useNavigation()
 
-  const handleSignOut = () => {
-    navigation.replace('Login')
+  const handleSignUpBuyer = () => {
+    navigation.navigate('SignUp')
   }
-
+  
+  const handleSignUpSeller = () => {
+    navigation.replace('SignUpBuyer')
+  }
+  
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
-        <Text style={styles.buttonText}>Looking for a Book?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
-        <Text style={styles.buttonText}>Want to sell a Book?</Text>
-      </TouchableOpacity>
-    </View>
+      <ImageBackground source={require('../assets/land.jpg')} resizeMode='cover' style={styles.container} blurRadius={5}>
+        <TouchableOpacity onPress={handleSignUpBuyer} style={styles.button}>
+          <Text style={styles.buttonText}>Looking for a Book?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleSignUpSeller} style={styles.button}>
+          <Text style={styles.buttonText}>Want to sell a Book?</Text>
+        </TouchableOpacity>
+      </ImageBackground>
   )
 }
 
@@ -31,16 +35,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-      backgroundColor: '#6B3F87',
-      width: '60%',
-      padding: 15,
+      backgroundColor: '#8B6995',
+      width: '70%',
+      padding: 20,
       borderRadius: 10,
       alignItems: 'center',
-      marginTop: 20,
+      margin: 20,
   },
   buttonText: {
       color: '#fff',
       fontWeight: '700',
-      fontSize: 16,
+      fontSize: 20,
   }
 })

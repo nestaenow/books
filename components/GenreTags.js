@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 8,
         paddingVertical: 3,
-        width: windowWidth - 353,
+        width: windowWidth * 0.155,
         alignItems: 'center'
     },
     book_Thriller: {

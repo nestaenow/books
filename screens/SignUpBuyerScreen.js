@@ -9,6 +9,8 @@ import BackButton from '../components/BackButton';
 const SignUpBuyerScreen = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const [location, setLocation] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirm, setPasswordConfirm] = useState('')
 
@@ -43,8 +45,8 @@ const SignUpBuyerScreen = () => {
                 <View style={styles.inputContainer}>
                     <CustomInput placeholder='Username' value={username} setValue={setUsername} logo={require('../assets/user.png')}/>
                     <CustomInput placeholder='Email' value={email} setValue={setEmail} logo={require('../assets/envelope.png')}/>
-                    <CustomInput placeholder='Phone Number' value={email} setValue={setEmail} logo={require('../assets/phone.png')}/>
-                    <CustomInput placeholder='Location' value={email} setValue={setEmail} logo={require('../assets/pin.png')}/>
+                    <CustomInput placeholder='Phone Number' value={phone} setValue={setPhone} logo={require('../assets/phone.png')}/>
+                    <CustomInput placeholder='Location' value={location} setValue={setLocation} logo={require('../assets/pin.png')}/>
                     <CustomInput placeholder='Password' value={password} setValue={setPassword} secureTextEntry logo={require('../assets/lock.png')}/>
                     <CustomInput placeholder='Confirm Password' value={passwordConfirm} setValue={setPasswordConfirm} secureTextEntry logo={require('../assets/lock.png')}/>
                 </View>

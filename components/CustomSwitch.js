@@ -13,9 +13,9 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
     <View style={{
         height: 30,
         width: '100%',
-        backgroundColor: 'white',
         flexDirection: 'row',
         justifyContent: 'center',
+        backgroundColor: '#F8F8F8',
         marginBottom: 20
     }}>
       <TouchableOpacity 
@@ -26,9 +26,11 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
             borderRadius: 5,
             justifyContent: 'center',
             alignItems: 'center', 
-            backgroundColor: getSelectionMode == 1 ? '#6B3F87' : 'white'}}>
+            backgroundColor: getSelectionMode == 1 ? '#6B3F87' : '#F8F8F8'
+        }}
+      >
           <Text style={{
-            color: getSelectionMode == 1 ? 'white' : '#6B3F87',
+            color: getSelectionMode == 1 ? '#F8F8F8' : '#6B3F87',
             fontSize: 15,
             fontWeight: '700'
             }}>

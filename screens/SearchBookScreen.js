@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/core'
+import CustomInput from '../components/CustomInput'
 
 const SearchBookScreen = () => {
+  const [search, setSearch] = useState('')
 
   const navigation = useNavigation()
 
@@ -12,6 +14,7 @@ const SearchBookScreen = () => {
 
   return (
     <View style={styles.container}>
+      <CustomInput placeholder='Search' value={search} setValue={setSearch} logo={require('../assets/search.png')}/>
       <Text>Search Book Screen</Text>
       <TouchableOpacity onPress={handleSignOut} style={styles.button}>
         <Text style={styles.buttonText}>Sign Out</Text>

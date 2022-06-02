@@ -23,17 +23,13 @@ const HomeScreen = () => {
   const navigation = useNavigation()
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#F8F8F8'}}>
       <ScrollView style={{padding: 20}}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
           <Text style={styles.header}>Hello Alessandro Nesta</Text>
           <ImageBackground source={require('../assets/user1.png')} style={{width: 55, height: 55}}/>
         </View>
 
-        <View style={{flexDirection: 'row', borderColor: '#C6C6C6', borderWidth: 1, borderRadius: 8, paddingVertical: 8, paddingHorizontal: 10}}>
-          <Feather name='search' size={20} color='#C6C6C6' style={{marginRight: 10}}/>
-          <TextInput placeholder='Search'/>
-        </View>
 
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20}}>
           <Text style={styles.header}>New Releases</Text>
@@ -95,6 +91,7 @@ export default HomeScreen
 const styles = StyleSheet.create({
   header: {
     fontSize: 20,
-    fontWeight: '700'
+    fontWeight: '700',
+    color: '#6B3F87'
   }
 })

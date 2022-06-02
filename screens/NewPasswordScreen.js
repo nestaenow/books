@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, ScrollView, Text, View} from 'react-native'
+import { StyleSheet, ScrollView, Text, View, SafeAreaView} from 'react-native'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
@@ -23,7 +23,7 @@ const NewPasswordScreen = () => {
     // }, [])
 
     const handleSubmit = () => {
-        navigation.replace('Login')
+        navigation.navigate('Login')
     }
 
     const handleResend = () => {
@@ -31,33 +31,31 @@ const NewPasswordScreen = () => {
     }
 
     const handleBackToLogin = () => {
-        navigation.replace('Login')
-    }
-    
-    const handleBack = () => {
-        navigation.replace('ForgotPassword')
+        navigation.navigate('Login')
     }
 
   return (
-    <ScrollView showsHorizontalScrollIndicator={false}>
-        <View style={styles.container}>
-            <BackButton onPress={handleBack}/>
-            <Text style={styles.title}>Reset Password</Text>
-            <View style={styles.inputContainer}>
-                <CustomInput placeholder='Enter Code' value={code} setValue={setCode} logo={require('../assets/barcode.png')}/>
-                <CustomInput placeholder='Enter New Password' value={newPassword} setValue={setNewPassword} logo={require('../assets/lock.png')}/>
-            </View>
-        
-            <View style={styles.buttonContainer}>
-                <CustomButton onPress={handleSubmit} text='Submit'/>
-                <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
-            </View>
+    <SafeAreaView>
+        <ScrollView showsHorizontalScrollIndicator={false}>
+            <View style={styles.container}>
+                <BackButton onPress={() => navigation.goBack()}/>
+                <Text style={styles.title}>Reset Password</Text>
+                <View style={styles.inputContainer}>
+                    <CustomInput placeholder='Enter Code' value={code} setValue={setCode} logo={require('../assets/barcode.png')}/>
+                    <CustomInput placeholder='Enter New Password' value={newPassword} setValue={setNewPassword} logo={require('../assets/lock.png')}/>
+                </View>
+            
+                <View style={styles.buttonContainer}>
+                    <CustomButton onPress={handleSubmit} text='Submit'/>
+                    <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
+                </View>
 
-            <View style={styles.Revert}>
-                <CustomButton onPress={handleBackToLogin} text="Back to Login" type='TERTIARY'/>
+                <View style={styles.Revert}>
+                    <CustomButton onPress={handleBackToLogin} text="Back to Login" type='TERTIARY'/>
+                </View>
             </View>
-        </View>
-    </ScrollView>
+        </ScrollView>
+    </SafeAreaView>
   )
 }
 
@@ -74,7 +72,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         color: '#6B3F87',
-        marginTop: 120,
+        marginTop: 50,
         marginBottom: 20,
     },
     inputContainer: {
@@ -85,13 +83,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 40
-    },
-    text: {
-        color: '#747474',
-        marginVertical: 10,
-    },
-    link: {
-        color: '#FDB075'
     },
     Revert: {
         width: '80%',

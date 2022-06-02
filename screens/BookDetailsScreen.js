@@ -38,12 +38,14 @@ const BookDetailsScreen = () => {
               </View>
             </View>
           </ImageBackground>
-        <View style={{flexDirection: 'row', marginHorizontal: 30}}>
-          <View>
+        <View style={{flexDirection: 'row', marginHorizontal: 30, justifyContent: 'space-between'}}>
+          <View style={{width: '80%'}}>
             <Text style={{color: '#6B3F87', fontSize: 25, fontWeight: '700', marginBottom: 4}}>Description</Text>
-            <Text style={[styles.text2, {color: '#A4A4A4'}]}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.</Text>
+            <ScrollView style={{height: 84}}>
+              <Text style={[styles.text2, {color: '#000', fontSize: 17}]}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.</Text>
+            </ScrollView>
           </View>
-          <AntDesign name={'hearto'} size={30} color='#6B3F87' style={{marginRight: 5}}/>
+          <AntDesign name={'hearto'} size={27} color='#6B3F87' style={{marginRight: 5}}/>
         </View>
       </ScrollView>
     </SafeAreaView>

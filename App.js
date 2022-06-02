@@ -25,7 +25,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="ConfirmEmail" component={ConfirmEmailScreen} />
         <Stack.Screen options={{ headerShown: false }} name="ForgotPassword" component={ForgotPasswordScreen} />
         <Stack.Screen options={{ headerShown: false }} name="NewPassword" component={NewPasswordScreen} />*/}
-        <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />  
+        {/* <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />   */}
         <Stack.Screen options={{ headerShown: false }} name="BookDetails" component={BookDetailsScreen} /> 
         {/* <Stack.Screen options={{ headerShown: false }} name="Land" component={LandScreen} /> */}
       </Stack.Navigator>

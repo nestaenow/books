@@ -4,9 +4,14 @@ import GenreTags from './GenreTags'
 import Foundation from 'react-native-vector-icons/Foundation'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native'
-import BookDetails from '../screens/BookDetailsScreen'
 
-const ListItem = ({image, title, author, pages, genre, price, onPress}) => {
+const ListItem = ({image, title, author, pages, genre, price}) => {
+    const image1 = image
+    const title1 = title
+    const author1 = author
+    const pages1 = pages
+    const genre1 = genre
+    const price1 = price
     const navigation = useNavigation()
 
     const [like, setLike] = useState('hearto')
@@ -14,10 +19,12 @@ const ListItem = ({image, title, author, pages, genre, price, onPress}) => {
     const onPressHandler = () => {
         setLike('heart')
     }
-
   return (
     <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
-      <TouchableOpacity onPress={() => navigation.navigate('BookDetails')} style={{flex: 1, flexDirection: 'row'}}>
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('BookDetails', image1, title1, author1, pages1, genre1, price1)} 
+        style={{flex: 1, flexDirection: 'row'}}
+      >
         <Image source={image} style={{width: 66.5 , height: 100, borderRadius: 5, marginRight: 10, }}/>
         <View style={{marginVertical: 10, justifyContent: 'space-between'}}>
             <View>

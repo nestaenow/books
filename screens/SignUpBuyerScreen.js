@@ -6,7 +6,7 @@ import CustomButton from '../components/CustomButton';
 import SocialButton from '../components/SocialButton';
 import BackButton from '../components/BackButton';
 
-const SignUpScreen = () => {
+const SignUpBuyerScreen = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -55,6 +55,8 @@ const SignUpScreen = () => {
                 <View style={styles.inputContainer}>
                     <CustomInput placeholder='Username' value={username} setValue={setUsername} logo={require('../assets/user.png')}/>
                     <CustomInput placeholder='Email' value={email} setValue={setEmail} logo={require('../assets/envelope.png')}/>
+                    <CustomInput placeholder='Phone Number' value={email} setValue={setEmail} logo={require('../assets/phone.png')}/>
+                    <CustomInput placeholder='Location' value={email} setValue={setEmail} logo={require('../assets/pin.png')}/>
                     <CustomInput placeholder='Password' value={password} setValue={setPassword} secureTextEntry logo={require('../assets/lock.png')}/>
                     <CustomInput placeholder='Confirm Password' value={passwordConfirm} setValue={setPasswordConfirm} secureTextEntry logo={require('../assets/lock.png')}/>
                 </View>
@@ -65,9 +67,7 @@ const SignUpScreen = () => {
                 </View>
 
                 <View style={styles.SocialSignUp}>
-                    <SocialButton onPress={handleSignUpWithFacebook} text='SignUp with Facebook' bgColor='#E7EAF4' fgColor='#4765A9' logo={require('../assets/Facebook.png')}/>
                     <SocialButton onPress={handleSignUpWithGoogle} text='SignUp with Google' bgColor='#FAE9EA' fgColor='#DD4D44' logo={require('../assets/Google.png')}/>
-                    <SocialButton onPress={handleSignUpWithApple} text='SignUp with Apple' bgColor='#E3E3E3' fgColor='#363636' logo={require('../assets/Apple.png')}/>
                     <CustomButton onPress={handleLogin} text="Have an account? Login" type='TERTIARY'/>
                 </View>
             </View>
@@ -76,7 +76,7 @@ const SignUpScreen = () => {
   )
 }
 
-export default SignUpScreen
+export default SignUpBuyerScreen
 
 const styles = StyleSheet.create({
     container: {
@@ -112,6 +112,6 @@ const styles = StyleSheet.create({
         width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 75
+        marginTop: 50
     },
 })

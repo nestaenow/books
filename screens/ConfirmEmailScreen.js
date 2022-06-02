@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, ScrollView, Text, View, Keyboard } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, SafeAreaView} from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
@@ -22,30 +22,28 @@ const ConfirmEmailScreen = () => {
         navigation.replace('Login')
     }
 
-    const handleBack = () => {
-        navigation.replace('SignUp')
-    }
-
   return (
-    <ScrollView showsHorizontalScrollIndicator={false}>
-        <View style={styles.container}>
-            <BackButton onPress={handleBack}/>
-            <Text style={styles.title}>Confirm Email</Text>
+    <SafeAreaView>
+        <ScrollView showsHorizontalScrollIndicator={false}>
+            <View style={styles.container}>
+                <BackButton onPress={navigation.goBack()}/>
+                <Text style={styles.title}>Confirm Email</Text>
 
-            <View style={styles.inputContainer}>
-                <CustomInput placeholder='Enter Confirmation Code' value={code} setValue={setCode} logo={require('../assets/barcode.png')}/>
-            </View>
-        
-            <View style={styles.buttonContainer}>
-                <CustomButton onPress={handleConfirm} text=' Confirm'/>
-                <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
-            </View>
+                <View style={styles.inputContainer}>
+                    <CustomInput placeholder='Enter Confirmation Code' value={code} setValue={setCode} logo={require('../assets/barcode.png')}/>
+                </View>
+            
+                <View style={styles.buttonContainer}>
+                    <CustomButton onPress={handleConfirm} text=' Confirm'/>
+                    <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
+                </View>
 
-            <View style={styles.Revert}>
-                <CustomButton onPress={handleBackToLogin} text="Back to Login" type='TERTIARY'/>
+                <View style={styles.Revert}>
+                    <CustomButton onPress={handleBackToLogin} text="Back to Login" type='TERTIARY'/>
+                </View>
             </View>
-        </View>
-    </ScrollView>
+        </ScrollView>
+    </SafeAreaView>
   )
 }
 
@@ -62,7 +60,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         color: '#6B3F87',
-        marginTop: 120,
+        marginTop: 50,
         marginBottom: 20,
     },
     inputContainer: {

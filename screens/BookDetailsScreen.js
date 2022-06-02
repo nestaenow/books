@@ -6,18 +6,14 @@ import { useNavigation } from '@react-navigation/native'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
 
-const BookDetailsScreen = () => {
+const BookDetailsScreen = ({ cover, title, author, lang, pages, genre, desc, contact, sName, location, price, cp, route }) => {
   const navigation = useNavigation()
-
-  const handleBack = () => {
-    navigation.navigate('Home')
-  }
   return (
     // <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
     <SafeAreaView>
       <ScrollView>
           <ImageBackground source={require('../assets/books/FiveFeetApart.jpg')} resizeMode="cover" blurRadius={15} style={styles.image}>
-            <BackButton onPress={handleBack} color='#FFF'/>
+            <BackButton onPress={() => navigation.goBack()} color='#FFF'/>
             <Text style={[styles.text1, {marginVertical: 33}]}>Book Detals</Text>
             <Image source={require('../assets/books/FiveFeetApart.jpg')} style={{width: 200 , height: 300, resizeMode: 'contain'}}/>
             <View style={{marginVertical: 20, alignItems: 'center'}}>

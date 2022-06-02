@@ -19,22 +19,13 @@ export const sliderData = [
 
 export const bestSeller = [
     {
-        image: require('../assets/books/SinEater.jpg'),
-        author: 'Megan Campisi',
-        title: 'Sin Eater',
-        genre: 'Thriller',
-        pages: '256',
-        price: '5000XAF',
-        id: '1',
-    },
-    {
         image: require('../assets/books/SixOfCrows.jpg'),
         author: 'Leigh Bardugo',
         title: 'Six Of Crows',
         genre: 'Fantasy',
         pages: '130',
         price: '3000XAF',
-        id: '2',
+        id: '1',
     },
     {
         image: require('../assets/books/TheWorst.jpg'),
@@ -43,7 +34,7 @@ export const bestSeller = [
         genre: 'Thriller',
         pages: '590',
         price: '5000XAF',
-        id: '3',
+        id: '2',
     },
     {
         image: require('../assets/books/HarryPotter.jpg'),
@@ -52,7 +43,7 @@ export const bestSeller = [
         genre: 'Adventure',
         pages: '1250',
         price: '8000XAF',
-        id: '4',
+        id: '3',
     },
     {
         image: require('../assets/books/TheGirlInRed.jpg'),
@@ -61,6 +52,15 @@ export const bestSeller = [
         genre: 'Fantasy',
         pages: '547',
         price: '6000XAF',
+        id: '4',
+    },
+    {
+        image: require('../assets/books/SinEater.jpg'),
+        author: 'Megan Campisi',
+        title: 'Sin Eater',
+        genre: 'Thriller',
+        pages: '256',
+        price: '5000XAF',
         id: '5',
     },
     {

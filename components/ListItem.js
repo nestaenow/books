@@ -20,7 +20,7 @@ const ListItem = ({image, title, author, pages, genre, price}) => {
         setLike('heart')
     }
   return (
-    <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
+    <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginVertical: 5}}>
       <TouchableOpacity 
         onPress={() => navigation.navigate('BookDetails', image1, title1, author1, pages1, genre1, price1)} 
         style={{flex: 1, flexDirection: 'row'}}
@@ -28,7 +28,7 @@ const ListItem = ({image, title, author, pages, genre, price}) => {
         <Image source={image} style={{width: 66.5 , height: 100, borderRadius: 5, marginRight: 10, }}/>
         <View style={{marginVertical: 10, justifyContent: 'space-between'}}>
             <View>
-                <Text style={{fontSize: 22, fontWeight: '700'}}>{title}</Text>
+                <Text style={{fontSize: 20, fontWeight: '500', color: '#6B3F87'}}>{title}</Text>
                 <Text style={{fontSize: 15, color: '#C4C4C4', fontWeight: '500'}}>{author}</Text>
             </View>
             <View>

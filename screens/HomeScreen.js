@@ -54,33 +54,35 @@ const HomeScreen = () => {
           onSelectSwitch={onSelectSwitch}
         />
 
-        {booksTab == 1 && 
-          bestSeller.map(item => (
-            <ListItem 
-              key={item.id} 
-              image={item.image} 
-              title={item.title} 
-              author={item.author} 
-              genre={item.genre}
-              pages={item.pages} 
-              price={item.price}
-            />
-          ))
-        }
+        <View style={{paddingBottom: 20}}>
+          {booksTab == 1 && 
+            bestSeller.map(item => (
+              <ListItem 
+                key={item.id} 
+                image={item.image} 
+                title={item.title} 
+                author={item.author} 
+                genre={item.genre}
+                pages={item.pages} 
+                price={item.price}
+              />
+            ))
+          }
 
-        {booksTab == 2 && 
-          theLatest.map(item => (
-            <ListItem 
-              key={item.id} 
-              image={item.image} 
-              title={item.title} 
-              author={item.author} 
-              genre={item.genre}
-              pages={item.pages} 
-              price={item.price}
-            />
-          ))
-        }
+          {booksTab == 2 && 
+            theLatest.map(item => (
+              <ListItem 
+                key={item.id} 
+                image={item.image} 
+                title={item.title} 
+                author={item.author} 
+                genre={item.genre}
+                pages={item.pages} 
+                price={item.price}
+              />
+            ))
+          }
+        </View>
       </ScrollView>
     </SafeAreaView>
   )

@@ -45,9 +45,9 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
             borderRadius: 5,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: getSelectionMode == 2 ? '#6B3F87' : 'white'}}>
+            backgroundColor: getSelectionMode == 2 ? '#6B3F87' : '#F8F8F8'}}>
           <Text style={{
-            color: getSelectionMode == 2 ? 'white' : '#6B3F87',
+            color: getSelectionMode == 2 ? '#F8F8F8' : '#6B3F87',
             fontSize: 15,
             fontWeight: '700'
             }}>

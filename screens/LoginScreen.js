@@ -15,7 +15,7 @@ const LoginScreen = () => {
     const navigation = useNavigation()
 
     const handleLogin = () => {
-        navigation.replace('Home')
+        navigation.navigate('Home')
     }
 
     const handleForgotPassword = () => {
@@ -35,7 +35,7 @@ const LoginScreen = () => {
     }
 
     const handleSignUp = () => {
-        navigation.replace('SignUp')
+        navigation.navigate('SignUp')
     }
 
   return (

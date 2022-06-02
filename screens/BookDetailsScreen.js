@@ -4,6 +4,7 @@ import { windowHeight } from '../utils/Dimensions'
 import BackButton from '../components/BackButton'
 import { useNavigation } from '@react-navigation/native'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import Entypo from 'react-native-vector-icons/Entypo'
 
 const BookDetailsScreen = () => {
   const navigation = useNavigation()
@@ -38,14 +39,54 @@ const BookDetailsScreen = () => {
               </View>
             </View>
           </ImageBackground>
-        <View style={{flexDirection: 'row', marginHorizontal: 30, justifyContent: 'space-between'}}>
-          <View style={{width: '80%'}}>
-            <Text style={{color: '#6B3F87', fontSize: 25, fontWeight: '700', marginBottom: 4}}>Description</Text>
-            <ScrollView style={{height: 84}}>
-              <Text style={[styles.text2, {color: '#000', fontSize: 17}]}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.</Text>
-            </ScrollView>
+        <View style={{ marginHorizontal: 30, marginTop: 15}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <View style={{width: '80%'}}>
+              <Text style={{color: '#6B3F87', fontSize: 25, fontWeight: '700', marginBottom: 4}}>Description</Text>
+              <ScrollView style={{height: 84}}>
+                <Text style={[styles.text2, {color: '#000', fontSize: 17}]}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.</Text>
+              </ScrollView>
+            </View>
+            <AntDesign name={'hearto'} size={27} color='#6B3F87' style={{marginRight: 5}}/>
           </View>
-          <AntDesign name={'hearto'} size={27} color='#6B3F87' style={{marginRight: 5}}/>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', 
+            marginVertical: 10}}>
+            <View>
+              <Text style={[styles.text1, {color: '#6B3F87', fontSize: 18}]}>Contacts</Text>
+              <Text style={[styles.text2, {color: '#000', fontSize: 17}]}>671234567</Text>
+              <Text style={[styles.text2, {color: '#000', fontSize: 17}]}>671234567</Text>
+            </View>
+            <View style={{alignItems: 'flex-end',}}>
+              <Text style={[styles.text1, {color: '#6B3F87', fontSize: 18}]}>Salvation BookShop</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                <Entypo name={'pin'} size={15} color='#6B3F87' style={{marginRight: 5}}/>
+                <Text style={[styles.text2, {color: '#000', fontSize: 17}]}>Mile 17</Text>
+              </View>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <View style={{
+              backgroundColor: '#6B3F87',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: 40,
+              borderRadius: 10,
+              width: '75%'
+            }}>
+              <Text style={{color: '#fff', fontSize: 20, fontWeight: '700'}}>5000XAF</Text>
+            </View>
+            <View style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: 40,
+              borderRadius: 10,
+              borderColor: '#6B3F87',
+              borderWidth: 2,
+              width: '20%'
+            }}>
+              <Text style={{color: '#6B3F87', fontSize: 20, fontWeight: '700'}}>20cp</Text>
+            </View>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -59,7 +100,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     width: '100%',
-    height: windowHeight * 0.64,
+    height: windowHeight * 0.63,
   },
   info: {
     backgroundColor: '#6B3F87',

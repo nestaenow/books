@@ -10,15 +10,11 @@ const ConfirmEmailScreen = () => {
 
     const navigation = useNavigation();
 
-    const handleConfirm = () => {
-        console.warn('Confirm')
-    }
-
     const handleResend = () => {
         console.warn('Resend')
     }
 
-    const handleBackToLogin = () => {
+    const handleConfirm = () => {
         navigation.replace('Login')
     }
 
@@ -26,7 +22,7 @@ const ConfirmEmailScreen = () => {
     <SafeAreaView>
         <ScrollView showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
-                <BackButton onPress={navigation.goBack()}/>
+                <BackButton onPress={() => navigation.goBack()}/>
                 <Text style={styles.title}>Confirm Email</Text>
 
                 <View style={styles.inputContainer}>
@@ -36,10 +32,6 @@ const ConfirmEmailScreen = () => {
                 <View style={styles.buttonContainer}>
                     <CustomButton onPress={handleConfirm} text=' Confirm'/>
                     <CustomButton onPress={handleResend} text="Resend Code" type='SECONDARY'/>
-                </View>
-
-                <View style={styles.Revert}>
-                    <CustomButton onPress={handleBackToLogin} text="Back to Login" type='TERTIARY'/>
                 </View>
             </View>
         </ScrollView>
@@ -78,11 +70,5 @@ const styles = StyleSheet.create({
     },
     link: {
         color: '#FDB075'
-    },
-    Revert: {
-        width: '80%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 20
     },
 })

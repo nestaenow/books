@@ -35,7 +35,7 @@ const LoginScreen = () => {
     }
 
     const handleSignUp = () => {
-        navigation.navigate('SignUp')
+        navigation.navigate('Land')
     }
 
   return (

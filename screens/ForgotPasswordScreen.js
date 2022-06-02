@@ -23,7 +23,7 @@ const ForgotPasswordScreen = () => {
     <SafeAreaView>
         <ScrollView showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
-                <BackButton onPress={navigation.goBack()}/>
+                <BackButton onPress={() => navigation.goBack()} color='#6B3F87'/>
                 <Text style={styles.title}>Confirm Username</Text>
                 <View style={styles.inputContainer}>
                     <CustomInput placeholder='Username' value={username} setValue={setUsername} logo={require('../assets/user.png')}/>

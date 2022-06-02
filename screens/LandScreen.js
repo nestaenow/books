@@ -11,7 +11,7 @@ const LandScreen = () => {
   }
   
   const handleSignUpSeller = () => {
-    navigation.replace('SignUpBuyer')
+    navigation.navigate('SignUpBuyer')
   }
   
   return (
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-      backgroundColor: '#8B6995',
+      backgroundColor: '#6B3F87',
       width: '70%',
       padding: 20,
       borderRadius: 10,

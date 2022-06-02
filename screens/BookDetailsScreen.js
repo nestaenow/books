@@ -1,15 +1,24 @@
 import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, SafeAreaView } from 'react-native'
 import React from 'react'
 import { windowHeight } from '../utils/Dimensions'
+import BackButton from '../components/BackButton'
+import { useNavigation } from '@react-navigation/native'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const BookDetailsScreen = () => {
+  const navigation = useNavigation()
+
+  const handleBack = () => {
+    navigation.navigate('Home')
+  }
   return (
     // <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
     <SafeAreaView>
       <ScrollView>
-        <View style={styles.cover}>
           <ImageBackground source={require('../assets/books/FiveFeetApart.jpg')} resizeMode="cover" blurRadius={15} style={styles.image}>
-            <Image source={require('../assets/books/FiveFeetApart.jpg')} style={{width: 200 , height: 300}}/>
+            <BackButton onPress={handleBack} color='#FFF'/>
+            <Text style={[styles.text1, {marginVertical: 33}]}>Book Detals</Text>
+            <Image source={require('../assets/books/FiveFeetApart.jpg')} style={{width: 200 , height: 300, resizeMode: 'contain'}}/>
             <View style={{marginVertical: 20, alignItems: 'center'}}>
               <Text style={{color: '#FFF', fontSize: 22, fontWeight: '700', marginBottom: 4}}>Five Feet Apart</Text>
               <Text style={{color: '#FFF', fontWeight: '300'}}>Mikki Daughtry && Tobias Laconis</Text>
@@ -29,8 +38,13 @@ const BookDetailsScreen = () => {
               </View>
             </View>
           </ImageBackground>
+        <View style={{flexDirection: 'row', marginHorizontal: 30}}>
+          <View>
+            <Text style={{color: '#6B3F87', fontSize: 25, fontWeight: '700', marginBottom: 4}}>Description</Text>
+            <Text style={[styles.text2, {color: '#A4A4A4'}]}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sapiente numquam nobis nihil inventore harum commodi voluptas. Omnis, asperiores placeat nesciunt accusantium rerum quos molestias? Eaque sunt animi officia impedit.</Text>
+          </View>
+          <AntDesign name={'hearto'} size={30} color='#6B3F87' style={{marginRight: 5}}/>
         </View>
-        <View></View>
       </ScrollView>
     </SafeAreaView>
   )
@@ -39,20 +53,10 @@ const BookDetailsScreen = () => {
 export default BookDetailsScreen
 
 const styles = StyleSheet.create({
-  cover: {
-    // paddingVertical: 80,
-    width: '100%',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#6B3F87',
-  },
   image: {
     flex: 1,
-    justifyContent: "center",
     alignItems: 'center',
     width: '100%',
-    // paddingTop: 50,
     height: windowHeight * 0.64,
   },
   info: {

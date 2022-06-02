@@ -36,7 +36,7 @@ const ListItem = ({image, title, author, pages, genre, price, onPress}) => {
 
       <View style={{justifyContent: 'space-between', alignItems: 'flex-end', marginVertical: 10,}}>
         <TouchableOpacity onPress={onPressHandler}>
-            <AntDesign name={like} size={20} color='#DA0202' style={{marginRight: 5}}/>
+            <AntDesign name={like} size={20} color='#6B3F87' style={{marginRight: 5}}/>
         </TouchableOpacity>
         <View>
             <Text style={{fontSize: 15, fontWeight: '700', color: '#6B3F87'}}>{price}</Text>

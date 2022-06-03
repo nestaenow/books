@@ -44,6 +44,7 @@ const LoginScreen = () => {
             <Image 
                 source={Logo} 
                 style={[styles.logo, {height : height * 0.0953}]}
+                resizeMode='contain'
             />
             <View style={styles.inputContainer}>
                 <CustomInput placeholder='Email' value={email} setValue={setEmail} logo={require('../assets/user.png')}/>

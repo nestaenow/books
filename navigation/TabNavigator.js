@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import SearchBookScreen from '../screens/SearchBookScreen';
 import BooksScreen from '../screens/BooksScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
 import MenuScreen from '../screens/MenuScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -45,10 +46,17 @@ const Tabs = () => {
         )}}
       />
       <Tab.Screen 
+        name='Notification'
+        component={NotificationsScreen}
+        options = {{ tabBarBadge: 3, tabBarIcon: ({color, size}) => (
+          <Ionicons name='ios-notifications-outline' color={color} size={size}/>
+        )}}
+      />
+      <Tab.Screen 
         name='Menu' 
         component={MenuScreen}
         options = {{ tabBarIcon: ({color, size}) => (
-          <Ionicons name='menu' color={color} size={size}/>
+          <Ionicons name='settings-outline' color={color} size={size}/>
         )}}
       />
     </Tab.Navigator>

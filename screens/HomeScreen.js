@@ -1,7 +1,6 @@
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native'
+import { StyleSheet, Text,  View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/core'
-import Feather from 'react-native-vector-icons/Feather'
 import Carousel from 'react-native-snap-carousel';
 import { bestSeller, sliderData, theLatest } from '../model/data';
 import BookCoverSlider from '../components/BookCoverSlider';
@@ -26,16 +25,13 @@ const HomeScreen = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: '#F8F8F8'}}>
       <ScrollView style={{padding: 20}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-          <Text style={styles.header}>Hello Alessandro Nesta</Text>
-          <ImageBackground source={require('../assets/user1.png')} style={{width: 55, height: 55}}/>
+          <Text style={[styles.header, {backgroundColor: '#ECEAED', paddingHorizontal: 10, paddingVertical: 10, borderRadius: 10}]}>¡Buenos días! 👋🏾</Text>
+          <ImageBackground source={require('../assets/logo.png')} style={{width: 55, height: 55}}/>
         </View>
 
 
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20}}>
-          <Text style={styles.header}>New Releases</Text>
-          <TouchableOpacity onPress={() => {}}>
-            <Text style={{color: '#6B3F87'}}>See All</Text>
-          </TouchableOpacity>
+          <Text style={[styles.header, {fontWeight: '800'}]}>New Releases</Text>
         </View>
 
         <Carousel
@@ -94,6 +90,6 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#6B3F87'
+    color: '#6B3F87',
   }
 })

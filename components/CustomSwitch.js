@@ -16,7 +16,7 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: '#F8F8F8',
-        marginBottom: 20
+        marginBottom: 6
     }}>
       <TouchableOpacity 
         activeOpacity={1} 
@@ -26,11 +26,11 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
             borderRadius: 5,
             justifyContent: 'center',
             alignItems: 'center', 
-            backgroundColor: getSelectionMode == 1 ? '#6B3F87' : '#F8F8F8'
+            backgroundColor: getSelectionMode == 1 ? '#6B3F87' : '#ECEAED'
         }}
       >
           <Text style={{
-            color: getSelectionMode == 1 ? '#F8F8F8' : '#6B3F87',
+            color: getSelectionMode == 1 ? '#ECEAED' : '#6B3F87',
             fontSize: 15,
             fontWeight: '700'
             }}>
@@ -45,9 +45,9 @@ const CustomSwitch = ({ selectionMode, option1, option2, onSelectSwitch }) => {
             borderRadius: 5,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: getSelectionMode == 2 ? '#6B3F87' : '#F8F8F8'}}>
+            backgroundColor: getSelectionMode == 2 ? '#6B3F87' : '#ECEAED'}}>
           <Text style={{
-            color: getSelectionMode == 2 ? '#F8F8F8' : '#6B3F87',
+            color: getSelectionMode == 2 ? '#ECEAED' : '#6B3F87',
             fontSize: 15,
             fontWeight: '700'
             }}>

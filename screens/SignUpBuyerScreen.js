@@ -32,8 +32,16 @@ const SignUpBuyerScreen = () => {
         navigation.navigate('Login')
     }
 
+    const handleSignUpWithFacebook = () => {
+        console.warn('Facebook')
+    }
+    
     const handleSignUpWithGoogle = () => {
         console.warn('Google')
+    }
+    
+    const handleSignUpWithApple = () => {
+        console.warn('Apple')
     }
 
   return (
@@ -57,7 +65,9 @@ const SignUpBuyerScreen = () => {
                 </View>
 
                 <View style={styles.SocialSignUp}>
+                    <SocialButton onPress={handleSignUpWithFacebook} text='SignUp with Facebook' bgColor='#E7EAF4' fgColor='#4765A9' logo={require('../assets/Facebook.png')}/>
                     <SocialButton onPress={handleSignUpWithGoogle} text='SignUp with Google' bgColor='#FAE9EA' fgColor='#DD4D44' logo={require('../assets/Google.png')}/>
+                    <SocialButton onPress={handleSignUpWithApple} text='SignUp with Apple' bgColor='#E3E3E3' fgColor='#363636' logo={require('../assets/Apple.png')}/>
                     <CustomButton onPress={handleLogin} text="Have an account? Login" type='TERTIARY'/>
                 </View>
             </View>

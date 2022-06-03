@@ -1,13 +1,19 @@
-import { StyleSheet, Text, SafeAreaView, ScrollView } from "react-native";
+import { StyleSheet, Text, SafeAreaView, View, ScrollView } from "react-native";
 import React from "react";
-import Suggestion from "../components/Suggestion";
+import Setting from "../components/Setting"
 
 const SettingsScreen = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF"}}>
       <ScrollView style={{ marginHorizontal: 30 }}>
         <Text style={styles.header}>Settings</Text>
-        <Suggestion/>
+        <View>
+          <Setting text='Profile' screen='Profile'/>
+          <Setting text='Suggestions' screen='Suggestions'/>
+          <Setting text='See terms and privacy' screen='TermsAndPrivacy'/>
+          <Setting text='Get Help' screen='Help'/>
+          <Setting text='Log out' screen='Login'/>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

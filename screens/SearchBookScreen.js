@@ -16,7 +16,7 @@ const SearchBookScreen = () => {
       <View style={{height: 60}}>
         <CustomInput placeholder='' value={search} setValue={setSearch} logo={require('../assets/search.png')}/>
       </View>
-      <ScrollView style={{ paddingTop: 10}}>
+      <ScrollView showsHorizontalScrollIndicator={false} style={{ paddingTop: 10}}>
         <View style={{marginBottom: 75}}>
           {bestSeller.map(item => (
               <ListItem 

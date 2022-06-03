@@ -38,7 +38,7 @@ const NewPasswordScreen = () => {
     <SafeAreaView>
         <ScrollView showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
-                <BackButton onPress={() => navigation.goBack()}/>
+                <BackButton onPress={() => navigation.goBack()} color='#6B3F87'/>
                 <Text style={styles.title}>Reset Password</Text>
                 <View style={styles.inputContainer}>
                     <CustomInput placeholder='Enter Code' value={code} setValue={setCode} logo={require('../assets/barcode.png')}/>

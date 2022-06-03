@@ -1,12 +1,11 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Image
-} from 'react-native';
+import { StyleSheet, View, Image, SafeAreaView, ScrollView } from 'react-native';
 import DynamicForm from '@coffeebeanslabs/react-native-form-builder';
+import BackButton from '../components/BackButton';
+import { useNavigation } from '@react-navigation/core'
 
 function SuggestionScreen(props) {
+  const navigation = useNavigation()
   const formTemplate = {
     data: [
       
@@ -57,21 +56,25 @@ function SuggestionScreen(props) {
   }
 
   return (
-    <View style={styles.container}>
-        
-        <Image style={styles.image} source = {require('../assets/suggestions.jpg')} ></Image>
-      <DynamicForm formTemplate={formTemplate} onSubmit={onSubmit} />
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+        <BackButton onPress={() => navigation.goBack()} color='#6B3F87'/>
+        <View style={styles.container}>
+          <Image style={styles.image} source = {require('../assets/suggestions.jpg')} ></Image>
+          <DynamicForm formTemplate={formTemplate} onSubmit={onSubmit} />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
+    marginTop: 70,
+    marginHorizontal: 20
   },
   image: {
-
     alignSelf: "center",
     paddingTop: 20,
     paddingBottom: 20,

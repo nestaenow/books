@@ -12,10 +12,11 @@ const SearchBookScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.header}>Search for a book</Text>
       <View style={{height: 60}}>
-        <CustomInput placeholder='Search' value={search} setValue={setSearch} logo={require('../assets/search.png')}/>
+        <CustomInput placeholder='' value={search} setValue={setSearch} logo={require('../assets/search.png')}/>
       </View>
-      <ScrollView style={{paddingHorizontal: 20, paddingTop: 10, width: '100%'}}>
+      <ScrollView style={{ paddingTop: 10}}>
         <View style={{marginBottom: 75}}>
           {bestSeller.map(item => (
               <ListItem 
@@ -49,9 +50,13 @@ export default SearchBookScreen
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20
+    // alignItems: 'center',
+    marginHorizontal: 20
+  },
+  header: {
+    fontSize: 25,
+    fontWeight: '700',
+    color: '#6B3F87',
+    marginTop: 30,
   },
 })

@@ -22,7 +22,7 @@ const ListItem = ({image, title, author, pages, genre, price}) => {
   return (
     <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginVertical: 5}}>
       <TouchableOpacity 
-        onPress={() => navigation.navigate('BookDetails', image1, title1, author1, pages1, genre1, price1)} 
+        onPress={() => navigation.navigate('BookDetails')} 
         style={{flex: 1, flexDirection: 'row'}}
       >
         <Image source={image} style={{width: 66.5 , height: 100, borderRadius: 5, marginRight: 10, }}/>

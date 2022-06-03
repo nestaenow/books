@@ -1,6 +1,5 @@
 import { StyleSheet, Text,  View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
-import { useNavigation } from '@react-navigation/core'
 import Carousel from 'react-native-snap-carousel';
 import { bestSeller, sliderData, theLatest } from '../model/data';
 import BookCoverSlider from '../components/BookCoverSlider';
@@ -19,10 +18,8 @@ const HomeScreen = () => {
     setBooksTab(value)
   }
 
-  const navigation = useNavigation()
-
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#F8F8F8'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
       <ScrollView style={{padding: 20}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
           <Text style={[styles.header, {backgroundColor: '#ECEAED', paddingHorizontal: 10, paddingVertical: 10, borderRadius: 10}]}>¡Buenos días! 👋🏾</Text>

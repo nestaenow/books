@@ -10,6 +10,7 @@ import NewPasswordScreen from './screens/NewPasswordScreen';
 import LandScreen from './screens/LandScreen';
 import TabNavigator from './navigation/TabNavigator';
 import BookDetailsScreen from './screens/BookDetailsScreen';
+import SuggestionScreen from './screens/SuggestionScreen';
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="NewPassword" component={NewPasswordScreen} /> */}
         <Stack.Screen options={{ headerShown: false }} name="Home" component={TabNavigator} />  
         {/* <Stack.Screen options={{ headerShown: false }} name="BookDetails" component={BookDetailsScreen} /> */}
+        <Stack.Screen options={{ headerShown: false }} name="Suggestions" component={SuggestionScreen} />
       </Stack.Navigator>
       {/* <TabNavigator/> */}
     </NavigationContainer>

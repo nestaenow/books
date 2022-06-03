@@ -1,9 +1,8 @@
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground} from "react-native";
-import React, { useState } from "react";
+import { StyleSheet, Text, SafeAreaView, ScrollView } from "react-native";
+import React from "react";
 import Notification from "../components/Notification";
 
 const NotificationsScreen = () => {
-const [booksTab, setBooksTab] = useState(1)
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
       <ScrollView style={{ marginHorizontal: 30 }}>

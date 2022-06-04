@@ -13,11 +13,11 @@ const SearchBookScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.header}>Search for a book</Text>
-      <View style={{height: 60}}>
+      <View style={{height: 60, marginBottom: 10}}>
         <CustomInput placeholder='' value={search} setValue={setSearch} logo={require('../assets/search.png')}/>
       </View>
-      <ScrollView showsHorizontalScrollIndicator={false} style={{ paddingTop: 10}}>
-        <View style={{marginBottom: 75}}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ paddingTop: 10}}>
+        <View style={{marginBottom: 80}}>
           {bestSeller.map(item => (
               <ListItem 
                 key={item.id} 

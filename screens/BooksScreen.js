@@ -6,7 +6,7 @@ import ListItem from '../components/ListItem';
 const BooksScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
-      <ScrollView showsHorizontalScrollIndicator={false} style={{ marginHorizontal: 30 }}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ marginHorizontal: 30 }}>
         <Text style={styles.header}>My Books</Text>
         <View style={{marginBottom: 75}}>
           {theLatest.map(item => (
